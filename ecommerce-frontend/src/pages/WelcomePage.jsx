@@ -1,30 +1,38 @@
 // src/pages/WelcomePage.jsx
 import React from 'react';
-import Navbar from '../assets/components/Navbar.jsx';
+import { Navbar } from '../assets/components/Navbar.jsx';
 import Slider from '../assets/components/Slider.jsx';
-import './WelcomePage.css'; // Use this for all related styling
+import { Link } from 'react-router-dom'; // Import Link for navigation
+import './WelcomePage.css';
 
 const WelcomePage = () => {
+    const githubImagesBaseUrl = 'https://raw.githubusercontent.com/hackerr3/Nagaraju/main/imzes/';
+
     const sliderImages = [
         {
-            imageUrl: 'https://images.pexels.com/photos/302820/pexels-photo-302820.jpeg',
-            title: 'Premium Products',
-            description: 'Discover high-quality items curated just for you.'
+            imageUrl: `${githubImagesBaseUrl}chill8.jpg`,
+            title: 'Freshly Picked Spices',
+            description: 'Experience the rich aroma of nature.'
         },
         {
-            imageUrl: 'https://images.pexels.com/photos/5632397/pexels-photo-5632397.jpeg',
-            title: 'E-commerce Elegance',
-            description: 'Shop the latest trends in tech, fashion, and more.'
+            imageUrl: `${githubImagesBaseUrl}chilly.jpg`,
+            title: 'Premium Quality Chilies',
+            description: 'Sourced directly from the best farms.'
         },
         {
-            imageUrl: 'https://m.media-amazon.com/images/I/61amb0CfMGL._SL1500_.jpg',
-            title: 'OnePlus Nord CE 3 Lite',
-            description: 'Snapdragon power meets affordable price.'
+            imageUrl: `${githubImagesBaseUrl}corn seeds.jpg`,
+            title: 'Organic Corn Seeds',
+            description: 'For a healthy and bountiful harvest.'
         },
         {
-            imageUrl: 'https://images.pexels.com/photos/1036808/pexels-photo-1036808.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2', // New image added
-            title: 'Sustainable Living',
-            description: 'Explore eco-friendly products for a better tomorrow.'
+            imageUrl: `${githubImagesBaseUrl}cornseeds2.jpg`,
+            title: 'High Yield Corn Varieties',
+            description: 'Boost your agricultural output.'
+        },
+        {
+            imageUrl: `${githubImagesBaseUrl}domestic powder2.jpg`,
+            title: 'Homemade Spice Blends',
+            description: 'Authentic flavors, just like grandma used to make.'
         }
     ];
 
@@ -35,101 +43,106 @@ const WelcomePage = () => {
 
             <div className="content-area">
                 <div className="product-grid-section">
-                    {/* First Card */}
+                    {/* First Card - Appliances (now using other images) */}
                     <div className="product-category-card">
-                        <h2>Appliances for your home | Up to 55% off</h2>
+                        <h2>Quality Powders & Spices</h2>
                         <div className="product-images-grid">
                             <div className="product-item">
-                                <img src="/images/appliances/air_conditioner.jpg" alt="Air conditioner" />
-                                <p>Air conditioners</p>
+                                <img src={`${githubImagesBaseUrl}domestic powdwe1.jpg`} alt="Domestic Powder 1" />
+                                <p>Domestic Powder</p>
                             </div>
                             <div className="product-item">
-                                <img src="/images/appliances/refrigerators.jpg" alt="Refrigerators" />
-                                <p>Refrigerators</p>
+                                <img src={`${githubImagesBaseUrl}goddukaram.jpg`} alt="Goddukaram Powder" />
+                                <p>Goddukaram</p>
                             </div>
                             <div className="product-item">
-                                <img src="/images/appliances/washing_machines.jpg" alt="Washing Machines" />
-                                <p>Washing Machines</p>
+                                <img src={`${githubImagesBaseUrl}raw chilli powedr.jpg`} alt="Raw Chilli Powder" />
+                                <p>Raw Chilli Powder</p>
                             </div>
                             <div className="product-item">
-                                <img src="/images/appliances/microwaves.jpg" alt="Microwaves" />
-                                <p>Microwaves</p>
+                                <img src={`${githubImagesBaseUrl}raw2.jpg`} alt="Raw Spices" />
+                                <p>Assorted Raw Spices</p>
                             </div>
                         </div>
-                        <a href="#" className="see-more-link" onClick={(e) => e.preventDefault()}>See more</a>
+                        {/* Use Link for navigation */}
+                        <Link to="/category/spices" className="see-more-link">View All Spices</Link>
                     </div>
 
-                    {/* Second Card */}
+                    {/* Second Card - New Launches (now using other images) */}
                     <div className="product-category-card">
-                        <h2>400+ New Launches | Prime Day | 12 - 14 July</h2>
+                        <h2>Premium Dal & Pulses</h2>
                         <div className="product-images-grid">
                             <div className="product-item">
-                                <img src="/images/new_launches/smartwatch_latest.jpg" alt="Smartwatch Latest" />
-                                <p>Smartwatch Latest</p>
+                                <img src={`${githubImagesBaseUrl}thr2.jpg`} alt="Thur Dal" />
+                                <p>Thur Dal (Type 2)</p>
                             </div>
                             <div className="product-item">
-                                <img src="/images/new_launches/headphones.jpg" alt="Headphones" />
-                                <p>Headphones</p>
+                                <img src={`${githubImagesBaseUrl}thur.jpg`} alt="Thur Dal" />
+                                <p>Thur Dal (Type 1)</p>
                             </div>
                             <div className="product-item">
-                                <img src="/images/new_launches/power_banks.jpg" alt="Power Banks" />
-                                <p>Power Banks</p>
+                                <img src={`${githubImagesBaseUrl}urad dal.jpg`} alt="Urad Dal" />
+                                <p>Urad Dal</p>
                             </div>
                             <div className="product-item">
-                                <img src="/images/new_launches/fitness_bands.jpg" alt="Fitness Bands" />
-                                <p>Fitness Bands</p>
+                                <img src={`${githubImagesBaseUrl}urad dall1.jpg`} alt="Urad Dal 1" />
+                                <p>Urad Dal (Bag)</p>
                             </div>
                         </div>
-                        <a href="#" className="see-more-link" onClick={(e) => e.preventDefault()}>See all new launches</a>
+                        {/* Use Link for navigation */}
+                        <Link to="/category/pulses" className="see-more-link">Explore Pulses</Link>
                     </div>
 
-                    {/* Third Card */}
+                    {/* Third Card - Revamp Home (You only provided 15 images. There are no more images for this card, so I'll put a placeholder or remove it if you wish) */}
                     <div className="product-category-card">
-                        <h2>Revamp your home in style</h2>
+                        <h2>More from Our Collection</h2>
                         <div className="product-images-grid">
                             <div className="product-item">
-                                <img src="/images/home_revamp/cushion_covers.jpg" alt="Cushion covers" />
-                                <p>Cushion covers, bedsheets & more</p>
+                                <img src="https://via.placeholder.com/150?text=More+Products" alt="Placeholder" />
+                                <p>Discover New Arrivals</p>
                             </div>
                             <div className="product-item">
-                                <img src="/images/home_revamp/figurines_vases.jpg" alt="Figurines, vases" />
-                                <p>Figurines, vases & more</p>
+                                <img src="https://via.placeholder.com/150?text=Exciting+Offers" alt="Placeholder" />
+                                <p>Exciting Offers</p>
                             </div>
                             <div className="product-item">
-                                <img src="/images/home_revamp/home_storage.jpg" alt="Home storage" />
-                                <p>Home storage</p>
+                                <img src="https://via.placeholder.com/150?text=Best+Sellers" alt="Placeholder" />
+                                <p>Best Sellers</p>
                             </div>
                             <div className="product-item">
-                                <img src="/images/home_revamp/lighting.jpg" alt="Lighting solutions" />
-                                <p>Lighting solutions</p>
+                                <img src="https://via.placeholder.com/150?text=Coming+Soon" alt="Placeholder" />
+                                <p>Coming Soon</p>
                             </div>
                         </div>
-                        <a href="#" className="see-more-link" onClick={(e) => e.preventDefault()}>Explore all</a>
+                        {/* Use Link for navigation */}
+                        <Link to="/products/all" className="see-more-link">View All Categories</Link>
                     </div>
 
-                    {/* Fourth Card */}
-                    <div className="product-category-card">
-                        <h2>PlayStation 5 Slim & Accessories | No Cost EMI</h2>
+                    {/* Fourth Card - PlayStation (You only provided 15 images. No more images for this card) */}
+                     <div className="product-category-card">
+                        <h2>Special Selections</h2>
                         <div className="product-images-grid">
                             <div className="product-item">
-                                <img src="/images/gaming/ps5_slim_digital.jpg" alt="PS5 Slim Digital Edition" />
-                                <p>PS5 Slim Digital Edition</p>
+                                <img src="https://via.placeholder.com/150?text=Featured+Item+1" alt="Featured Item 1" />
+                                <p>Featured Item 1</p>
                             </div>
                             <div className="product-item">
-                                <img src="/images/gaming/ps5_disc_edition.jpg" alt="PS5 Disc Edition" />
-                                <p>PS5 Disc Edition</p>
+                                <img src="https://via.placeholder.com/150?text=Featured+Item+2" alt="Featured Item 2" />
+                                <p>Featured Item 2</p>
                             </div>
                             <div className="product-item">
-                                <img src="/images/gaming/ps5_controllers.jpg" alt="PS5 Controllers" />
-                                <p>Controllers</p>
+                                <img src="https://via.placeholder.com/150?text=Featured+Item+3" alt="Featured Item 3" />
+                                <p>Featured Item 3</p>
                             </div>
                             <div className="product-item">
-                                <img src="/images/gaming/ps5_headsets.jpg" alt="PS5 Headsets" />
-                                <p>Headsets</p>
+                                <img src="https://via.placeholder.com/150?text=Featured+Item+4" alt="Featured Item 4" />
+                                <p>Featured Item 4</p>
                             </div>
                         </div>
-                        <a href="#" className="see-more-link" onClick={(e) => e.preventDefault()}>Shop now</a>
+                        {/* Use Link for navigation */}
+                        <Link to="/products/special" className="see-more-link">Discover More</Link>
                     </div>
+
                 </div>
             </div>
 

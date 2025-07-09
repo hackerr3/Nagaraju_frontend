@@ -114,3 +114,110 @@
     margin: 10px 0;
     color: #ffffffde; /* diamond white tint */
 }
+
+
+/* src/pages/WelcomePage.css */
+
+/* ... (previous CSS code) ... */
+
+.product-images-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adjust minmax as needed */
+    gap: 15px; /* Space between images */
+    padding: 15px; /* Add some padding around the grid itself if desired */
+    background-color: #f9f9f9; /* Example: light background for the grid area */
+    border-radius: 8px;
+}
+
+.product-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Center content vertically */
+    /* Remove any explicit padding here if present, as it creates the white space */
+    /* background-color: #fff;  If you had a background here that caused padding */
+    border-radius: 5px;
+    overflow: hidden; /* Crucial for images that might slightly overflow */
+    position: relative; /* Needed for absolute positioning of text or overlays if added later */
+}
+
+.product-item img {
+    width: 100%; /* Make image fill the width of its parent (.product-item) */
+    height: 150px; /* Set a fixed height or use auto/aspect-ratio for responsiveness */
+    object-fit: cover; /* This is KEY: it crops the image to fill the box without distorting */
+    display: block; /* Remove any extra space below the image, common with inline elements */
+    border-radius: 5px; /* Match parent's border-radius if desired */
+}
+
+.product-item p {
+    margin-top: 10px; /* Space between image and text */
+    text-align: center;
+    font-size: 0.9em;
+    color: #555;
+    padding: 0 5px; /* Small horizontal padding for text */
+}
+
+/* src/pages/WelcomePage.css */
+
+/* ... (previous CSS code for other sections) ... */
+
+.owner-section {
+    background: url('https://images.unsplash.com/photo-1523642595788-340f97f3fee2') no-repeat center center/cover;
+    padding: 80px 20px; /* Adjust vertical padding as needed */
+    color: #fff;
+    text-align: center;
+    position: relative;
+    /* Ensure no max-width on this section if you want it to span full width */
+    width: 100%; /* Explicitly set to full width */
+    box-sizing: border-box; /* Include padding in width */
+}
+
+.owner-overlay {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 40px; /* Internal padding for the content inside the overlay */
+    border-radius: 12px;
+    max-width: 800px; /* Increased max-width to make it wider on larger screens */
+    width: 90%; /* Make it take 90% of parent width, but no more than max-width */
+    margin: auto; /* Centers the block horizontally */
+    color: #f0f0f0;
+    text-shadow: 1px 1px 3px #aaa;
+    font-family: 'Segoe UI', sans-serif;
+    /* Use flexbox for internal alignment if you want content distributed */
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    align-items: center; /* Center items horizontally within the overlay */
+    justify-content: center; /* Center items vertically if there's extra space */
+}
+
+.owner-section h2 {
+    font-size: 2.2rem; /* Slightly larger heading */
+    margin-bottom: 25px; /* More space below heading */
+    color: #ffffff;
+}
+
+.owner-section p {
+    font-size: 1.2rem; /* Slightly larger text for readability */
+    margin: 10px 0;
+    color: #ffffffde;
+    line-height: 1.6; /* Improved line spacing */
+}
+
+/* Optional: Add media queries for responsiveness */
+@media (max-width: 768px) {
+    .owner-section {
+        padding: 50px 15px; /* Reduce padding on smaller screens */
+    }
+
+    .owner-overlay {
+        padding: 30px; /* Reduce overlay padding */
+        width: 95%; /* Make it take more width on smaller screens */
+    }
+
+    .owner-section h2 {
+        font-size: 1.8rem;
+    }
+
+    .owner-section p {
+        font-size: 1rem;
+    }
+}

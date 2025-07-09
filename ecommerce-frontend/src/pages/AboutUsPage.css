@@ -1,0 +1,88 @@
+/* src/pages/AboutUsPage.css */
+
+.about-us-page {
+    /* Adjust padding-top based on your Navbar's height to prevent content from going under it */
+    padding-top: 150px; /* Example: if Navbar height is around 100-120px */
+    background-color: #f8f8f8;
+    min-height: 100vh;
+    color: #333;
+    font-family: Arial, sans-serif;
+}
+
+.about-us-header {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #e2e2e2;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.about-us-header h1 {
+    font-size: 2.5em;
+    color: #333;
+    margin: 0;
+}
+
+.about-us-content-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 20px 5%;
+    max-width: 1200px; /* Limit content width */
+    margin: 0 auto; /* Center the content */
+}
+
+.about-details-container,
+.address-details-container,
+.map-container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.about-details-container {
+    flex: 2; /* Takes more space for the main text */
+    min-width: 300px; /* Minimum width before wrapping */
+}
+
+.contact-info-map-section {
+    flex: 3; /* Takes more space for contact and map section */
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    min-width: 300px;
+}
+
+.about-details-container h3,
+.address-details-container h3,
+.map-container h3 {
+    color: #ffc107; /* Your primary color (from Navbar.css) */
+    font-size: 1.8em;
+    margin-top: 0;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #ffc107;
+    padding-bottom: 10px;
+}
+
+.about-details-container p,
+.address-details-container p {
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.map-container iframe {
+    border-radius: 8px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .about-us-content-wrapper {
+        flex-direction: column; /* Stack sections vertically */
+    }
+    .about-details-container,
+    .contact-info-map-section {
+        flex: auto; /* Allow items to take full width */
+        width: 100%;
+    }
+}

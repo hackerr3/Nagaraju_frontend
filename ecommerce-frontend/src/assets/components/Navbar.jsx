@@ -1,57 +1,59 @@
-// src/assets/components/Navbar.js
+// src/assets/components/Navbar.jsx
 import React from 'react';
-import './Navbar.css'; //
+import { Link } from 'react-router-dom';
+import './Navbar.css';
 
-const Navbar = () => {
+// Keep this line as is. This is a named export.
+export const Navbar = () => {
     return (
-        <>
-            {/* Top Main Navbar */}
-            <nav className="navbar-top">
-                <div className="navbar-left">
-                    {/* Replace with your actual logo path */}
-                    <a href="/" className="logo-link">
-                        <img src="/images/village_spices_logo.png" alt="Village Spices Logo" className="navbar-logo" />
-                    </a>
-                    {/* Removed delivery address section */}
+        <div className="main-navbar-container">
+            <div className="navbar-top-info">
+                <div className="top-info-left">
+                    <a href="https://www.facebook.com/yourpage" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i className="fab fa-facebook-f"></i></a>
+                    <a href="https://www.linkedin.com/yourpage" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i className="fab fa-linkedin-in"></i></a>
+                    <a href="https://twitter.com/yourpage" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i className="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/yourpage" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i className="fab fa-instagram"></i></a>
+                    <span className="info-item">
+                        <i className="fas fa-phone-alt"></i> +91 8888888888
+                    </span>
+                    <span className="info-item">
+                        <i className="fas fa-envelope"></i> websupport@justdial.com
+                    </span>
+                </div>
+                <div className="top-info-right">
+                    <span className="info-item">
+                        <i className="fas fa-map-marker-alt"></i> Malad West
+                    </span>
+                    <button type="button" aria-label="Search"><i className="fas fa-search"></i></button>
+                    <Link to="/login" className="login-signup-link">
+                        <i className="fas fa-user"></i> Log In | Sign Up
+                    </Link>
+                </div>
+            </div>
+
+            <nav className="navbar-main">
+                <div className="navbar-main-left">
+                    <Link to="/" className="logo-link">
+                        <img src="/images/star_spices_logo.png" alt="Star Spices Logo" className="navbar-logo" />
+                    </Link>
                 </div>
 
-                <div className="navbar-center">
-                    <select className="search-category-dropdown">
-                        <option>All</option>
-                        <option>Electronics</option>
-                        <option>Fashion</option>
-                        <option>Home & Kitchen</option>
-                        {/* Add more categories as needed */}
-                    </select>
-                    <input type="text" className="search-input" placeholder="Search Amazon.in" /> {/* Updated placeholder */}
-                    <button className="search-button">
-                        <span className="search-icon">🔍</span> {/* Unicode for search icon */}
+                <div className="navbar-main-right">
+                    <button className="hamburger-menu" aria-label="Toggle navigation">
+                        ☰
                     </button>
-                </div>
-
-                <div className="navbar-right">
-                    <a href="/" className="nav-link">Home</a>
-                    <a href="/about" className="nav-link">About</a>
-                    <select className="language-dropdown">
-                        <option>EN</option>
-                        <option>HI</option>
-                    </select>
-                    <div className="account-section">
-                        <a href="/signin" className="account-link">Hello, Sign in</a>
-                        <a href="/account" className="account-link">Account & Lists ▼</a> {/* Dropdown indicator */}
-                    </div>
-                    <div className="returns-orders-section">
-                        <a href="/returns" className="returns-orders-link">Returns</a>
-                        <a href="/orders" className="returns-orders-link">& Orders</a>
-                    </div>
-                    <a href="/cart" className="cart-section">
-                        <span className="cart-icon">🛒</span> {/* Unicode for shopping cart */}
-                        <span className="cart-count">0</span> {/* Example: cart item count */}
-                    </a>
+                    <ul className="nav-links">
+                        <li><Link to="/" className="nav-link active">HOME</Link></li>
+                        <li><Link to="/category" className="nav-link">CATEGORY</Link></li>
+                        <li><Link to="/products" className="nav-link">PRODUCTS</Link></li>
+                        <li><Link to="/about" className="nav-link">ABOUT US</Link></li>
+                        <li><Link to="/gallery" className="nav-link">GALLERY</Link></li>
+                        <li><Link to="/videos" className="nav-link">VIDEOS</Link></li>
+                        <li><Link to="/testimonials" className="nav-link">TESTIMONIALS</Link></li>
+                        <li><Link to="/contact" className="nav-link">CONTACT US</Link></li>
+                    </ul>
                 </div>
             </nav>
-        </>
+        </div>
     );
 };
-
-export default Navbar;

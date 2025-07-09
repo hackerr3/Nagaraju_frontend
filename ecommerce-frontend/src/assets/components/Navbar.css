@@ -1,293 +1,195 @@
-/* src/assets/components/Navbar.css */
 
-/* Top Main Navbar */
-.navbar-top {
+
+.main-navbar-container {
+    background-color: transparent;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.navbar-top-info {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #131921; /* Darker Amazon blue */
-    color: white;
-    padding: 8px 20px;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    box-sizing: border-box;
-    height: 60px; /* Fixed height for top nav */
+    padding: 8px 30px;
+    font-size: 0.85em;
+    background-color: rgba(55, 108, 178, 0.7);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* --- Left Section (Logo & Address) --- */
-.navbar-left {
-    display: flex;
-    align-items: flex-end; /* Align to bottom for address text */
-    gap: 5px;
-    height: 100%; /* Take full height of parent */
-}
-
-.logo-link {
+.top-info-left,
+.top-info-right {
     display: flex;
     align-items: center;
+    gap: 15px;
+}
+
+.navbar-top-info a {
+    color: #fff;
     text-decoration: none;
-    margin-right: 15px; /* Space from address */
+    transition: color 0.3s ease;
+}
+
+.navbar-top-info a:hover {
+    color: #ffc107;
+}
+
+.navbar-top-info .info-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.navbar-top-info .info-item i {
+    font-size: 1em;
+    color: #ffc107;
+}
+
+.navbar-top-info .login-signup-link {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 10px;
+    border: 1px solid rgba(155, 214, 173, 0.863);
+    border-radius: 4px;
+}
+
+.navbar-top-info .login-signup-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.navbar-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: rgba(46, 53, 62, 0.5);
+}
+
+.navbar-main-left .logo-link {
+    display: flex;
+    align-items: center;
 }
 
 .navbar-logo {
-    height: 35px; /* Slightly smaller logo */
+    height: 60px;
     width: auto;
-    object-fit: contain;
 }
 
-.delivery-address {
-    display: flex;
-    align-items: flex-start; /* Align icon to top */
-    font-size: 0.8rem;
-    color: #ccc;
-    padding: 0 5px;
-    cursor: pointer;
-    line-height: 1.2;
-}
-
-.location-icon {
-    font-size: 1.2rem;
-    margin-right: 3px;
-    color: white;
-}
-
-.address-text {
-    display: flex;
-    flex-direction: column;
-}
-
-.update-location {
-    color: #007185;
-    font-size: 0.7rem;
-    text-decoration: none;
-    white-space: nowrap;
-}
-
-.update-location:hover {
-    color: #FF9900;
-    text-decoration: underline;
-}
-
-/* --- Center Section (Search Bar) --- */
-.navbar-center {
-    display: flex;
-    flex-grow: 1;
-    margin: 0 15px;
-    max-width: 800px; /* Wider search bar */
-    height: 40px; /* Fixed height for search bar components */
-}
-
-.search-category-dropdown {
-    border-top-left-radius: 4px;
-    border-bottom-left-radius: 4px;
-    border: none;
-    padding: 0 10px; /* Adjust padding */
-    background-color: #E6E6E6;
-    color: #555;
-    cursor: pointer;
-    outline: none;
-    font-size: 0.9rem;
-    border-right: 1px solid #ccc;
-    white-space: nowrap; /* Prevent "All" from wrapping */
-}
-
-.search-input {
-    flex-grow: 1;
-    padding: 8px 10px;
-    border: none;
-    outline: none;
-    font-size: 1rem;
-}
-
-.search-button {
-    border-top-right-radius: 4px;
-    border-bottom-right-radius: 4px;
-    background-color: #FEBD69; /* Lighter Amazon orange */
-    border: none;
-    padding: 8px 15px;
-    cursor: pointer;
+.navbar-main-right {
     display: flex;
     align-items: center;
-    justify-content: center;
 }
 
-.search-button:hover {
-    background-color: #F3A847;
-}
-
-.search-icon {
-    color: #333;
-    font-size: 1.2rem;
-}
-
-/* --- Right Section (Account, Orders, Cart) --- */
-.navbar-right {
-    display: flex;
-    align-items: flex-end; /* Align text to bottom */
-    gap: 15px;
-    height: 100%;
-}
-
-.language-dropdown {
-    background-color: transparent;
-    color: white;
+.hamburger-menu {
+    display: none;
+    background: none;
     border: none;
-    padding: 5px;
+    color: #fff;
+    font-size: 2em;
     cursor: pointer;
-    outline: none;
-    font-size: 0.9rem;
+    padding: 5px 10px;
 }
 
-.account-section,
-.returns-orders-section {
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
     display: flex;
-    flex-direction: column;
-    font-size: 0.75rem;
-    line-height: 1.2;
+    gap: 25px;
 }
 
-.account-link,
-.returns-orders-link {
-    color: white;
-    text-decoration: none;
-    white-space: nowrap;
-}
-
-.account-link:hover,
-.returns-orders-link:hover {
-    text-decoration: underline;
-}
-
-.account-link:first-child {
-    font-size: 0.85rem; /* Smaller "Hello, Sign in" */
-    font-weight: normal;
-}
-
-.account-link:last-child {
-    font-size: 0.9rem;
-    font-weight: bold;
-}
-
-.cart-section {
-    display: flex;
-    align-items: flex-end; /* Align cart icon to bottom */
-    text-decoration: none;
-    color: white;
+.nav-links li {
     position: relative;
-    padding-bottom: 5px; /* Space for count */
 }
 
-.cart-icon {
-    font-size: 2.2rem; /* Larger cart icon */
-    margin-right: 5px;
-}
-
-.cart-count {
-    position: absolute;
-    top: 5px; /* Position relative to .cart-section */
-    right: 0;
-    background-color: #FF9900;
-    color: black;
-    font-size: 0.8rem;
-    padding: 2px 6px;
-    border-radius: 50%;
-    font-weight: bold;
-    transform: translateX(50%); /* Adjust to center over cart */
-}
-
-/* --- Bottom Category Navbar --- */
-.navbar-bottom {
-    background-color: #232F3E; /* Amazon's dark blue secondary nav */
-    color: white;
-    padding: 8px 20px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 15px;
-    position: fixed;
-    top: 60px; /* Position below navbar-top */
-    width: 100%;
-    z-index: 999; /* Slightly lower z-index than main navbar */
-    box-sizing: border-box;
-    height: 40px; /* Fixed height for bottom nav */
-}
-
-.navbar-bottom .nav-item {
-    color: white;
+.nav-links .nav-link {
+    color: #fff;
     text-decoration: none;
+    font-size: 1em;
     font-weight: bold;
-    font-size: 0.9rem;
     padding: 5px 0;
-    white-space: nowrap; /* Prevent wrapping */
+    position: relative;
+    transition: color 0.3s ease;
 }
 
-.navbar-bottom .nav-item:hover {
-    text-decoration: underline;
-    outline: 1px solid white; /* Border on hover, like Amazon */
-    padding: 5px 5px;
-    margin: -5px -5px; /* Adjust padding/margin to make hover area consistent */
+.nav-links .nav-link:hover,
+.nav-links .nav-link.active {
+    color: #ffc107;
 }
 
-/* Responsive adjustments */
-@media (max-width: 1024px) {
-    .navbar-top {
+.nav-links .nav-link.active::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 2px;
+    background-color: #ffc107;
+}
+
+@media (max-width: 992px) {
+    .navbar-top-info {
         flex-wrap: wrap;
-        height: auto;
-    }
-    .navbar-left, .navbar-right {
-        flex-basis: auto; /* Allow flexible wrapping */
-        margin-bottom: 10px;
-    }
-    .navbar-center {
-        order: 3;
-        flex-basis: 100%;
-        margin: 10px 0;
-    }
-    .navbar-bottom {
-        top: auto; /* Will be below content */
-        position: relative; /* Make it flow with content on smaller screens */
-        flex-wrap: wrap;
-        height: auto;
         justify-content: center;
-        padding: 8px 10px;
+        gap: 10px 20px;
+        padding: 8px 15px;
+        background-color: rgba(46, 53, 62, 0.8);
+    }
+
+    .top-info-left, .top-info-right {
         gap: 10px;
     }
-    .slider-container {
-        margin-top: 180px; /* Adjust if navbar-top wraps significantly */
+
+    .navbar-main {
+        padding: 10px 15px;
+        background-color: rgba(46, 53, 62, 0.7);
+    }
+
+    .navbar-logo {
+        height: 50px;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: rgba(62, 71, 82, 0.9);
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 1000;
+        padding: 10px 0;
+        text-align: center;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 5px 0;
+    }
+
+    .hamburger-menu {
+        display: block;
     }
 }
 
 @media (max-width: 768px) {
-    .navbar-top {
-        padding: 5px 10px;
+    .navbar-top-info {
+        flex-direction: column;
+        align-items: flex-start;
     }
-    .navbar-logo {
-        height: 30px;
-    }
-    .search-input, .search-category-dropdown, .search-button {
-        height: 35px;
-    }
-    .navbar-right {
+    .top-info-left, .top-info-right {
+        width: 100%;
+        justify-content: flex-start;
+        flex-wrap: wrap;
         gap: 10px;
-        font-size: 0.7rem;
-    }
-    .cart-icon {
-        font-size: 1.8rem;
-    }
-    .navbar-bottom {
-        display: none; /* Hide bottom nav completely on very small screens */
-    }
-    .slider-container {
-        margin-top: 100px; /* Adjust for single line navbar if bottom nav is hidden */
-        height: 30vh;
-    }
-    .slide-title {
-        font-size: 1.5rem;
-    }
-    .slide-description {
-        font-size: 0.9rem;
+        margin-bottom: 5px;
     }
 }
