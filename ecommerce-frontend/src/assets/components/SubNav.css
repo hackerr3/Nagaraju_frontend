@@ -1,0 +1,41 @@
+/* src/assets/components/SubNav.css */
+.sub-nav {
+    background-color: #232F3E; /* Dark blue/grey like Amazon */
+    color: #fff;
+    padding: 8px 0;
+    font-size: 0.85rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Subtle shadow */
+}
+
+.sub-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0 20px; /* Adjust padding as needed */
+    display: flex;
+    align-items: center;
+    overflow-x: auto; /* Enable horizontal scrolling on small screens */
+    -webkit-overflow-scrolling: touch; /* For smooth scrolling on iOS */
+    scrollbar-width: none; /* Hide scrollbar for Firefox */
+    -ms-overflow-style: none;  /* Hide scrollbar for IE and Edge */
+}
+
+.sub-nav ul::-webkit-scrollbar { /* Hide scrollbar for Chrome, Safari, Opera */
+    display: none;
+}
+
+
+.sub-nav ul li {
+    margin-right: 15px;
+    white-space: nowrap; /* Prevent wrapping for nav items */
+}
+
+.sub-nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 0;
+    transition: color 0.2s ease-in-out;
+}
+
+.sub-nav ul li a:hover {
+    color: #FF9900; /* Amazon orange on hover */
+}
