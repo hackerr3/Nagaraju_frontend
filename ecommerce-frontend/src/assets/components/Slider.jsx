@@ -7,7 +7,8 @@ const Slider = ({ slides }) => {
     const [currentSlide, setCurrentSlide] = useState(0);
 
     // 2. Define totalSlides (handle potential undefined/null slides gracefully)
-    //    Use optional chaining or default to an empty array
+    //    Use optional chaining or default to an empty array  git iniit
+    
     const actualSlides = Array.isArray(slides) ? slides : [];
     const totalSlides = actualSlides.length;
 
